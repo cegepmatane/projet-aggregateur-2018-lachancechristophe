@@ -23,6 +23,14 @@ namespace TP2_ProjetAgregateur
         public MainWindow()
         {
             InitializeComponent();
+
+            PokeapiDAO pd = new PokeapiDAO();
+            pd.GetPokemon();
+            Console.ReadKey();
+
+            VulnerabiliteDAO vd = new VulnerabiliteDAO();
+            vd.GetListeNouvelles();
+            Console.ReadKey();
         }
     }
 }
