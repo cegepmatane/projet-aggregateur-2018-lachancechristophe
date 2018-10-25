@@ -25,12 +25,16 @@ namespace TP2_ProjetAgregateur
             InitializeComponent();
 
             PokeapiDAO pd = new PokeapiDAO();
-            pd.GetPokemon();
+            List<Pokemon> lp = pd.GetPokemon();
             Console.ReadKey();
 
-            VulnerabiliteDAO vd = new VulnerabiliteDAO();
-            vd.GetListeNouvelles();
-            Console.ReadKey();
+            foreach(Pokemon fif in lp)
+            {
+                Console.WriteLine(fif.numero + " - " + fif.nom);
+            }
+            //VulnerabiliteDAO vd = new VulnerabiliteDAO();
+            //vd.GetListeNouvelles();
+            //Console.ReadKey();
         }
     }
 }

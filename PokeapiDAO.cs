@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
+using System.Web.Script.Serialization;
 
 namespace TP2_ProjetAgregateur
 {
@@ -13,23 +14,42 @@ namespace TP2_ProjetAgregateur
         string baseURL = "https://pokeapi.co/api/v2/";
         string requestURL = "pokemon/";
 
-        public void GetPokemon()
+        public List<Pokemon> GetPokemon()
         {
             Console.WriteLine("PokeapiDAO.GetPokemon()");
 
-            string completeURL = baseURL + requestURL;
-            Console.WriteLine(completeURL);
+            List<Pokemon> listePokemon = new List<Pokemon>();
 
-            HttpWebRequest request = HttpWebRequest.CreateHttp(completeURL);
-            request.Method = "GET";
-            //request.UserAgent = "Mozilla/5.0 doogiePIM/1.0.4.2 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36";
-            WebResponse reponse =request.GetResponse();
+            //string completeurl = baseurl + requesturl;
+            //console.writeline(completeurl);
 
-            StreamReader lecteurListe = new StreamReader(reponse.GetResponseStream());
+            //httpwebrequest request = httpwebrequest.createhttp(completeurl);
+            //request.method = "get";
+            //request.useragent = "mozilla/5.0 doogiepim/1.0.4.2 applewebkit/537.36 (khtml, like gecko) chrome/51.0.2704.84 safari/537.36";
+            //webresponse reponse = request.getresponse();
+            //streamreader lecteurliste = new streamreader(reponse.getresponsestream());
 
-            string feed = lecteurListe.ReadToEnd();
+            //string feed = lecteurListe.ReadToEnd();
 
-            Console.WriteLine(feed);
+            // File.WriteAllText("pokeapi.json", feed);
+
+            string feed = File.ReadAllText("..\\pokeapi.json");
+
+            JavaScriptSerializer serial = new JavaScriptSerializer();
+            dynamic objet = serial.Deserialize<dynamic>(feed);
+            string nombre = objet["count"].ToString();
+            Console.WriteLine(nombre + " Pokémon reçus");
+
+            dynamic[] results = objet["results"];
+
+            Pokemon tempokemon = new Pokemon();
+            foreach (dynamic proutbanane in results)
+            {
+                tempokemon.nom = proutbanane["name"];
+                //tempokemon.hauteur = proutbanane["heigth"];
+                listePokemon.Add(tempokemon);
+            }
+            return listePokemon;
         }
     }
 }
