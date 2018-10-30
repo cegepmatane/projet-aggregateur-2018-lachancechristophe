@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Pokemon.cs" />
+    <Compile Include="Vulnerabilite.cs" />
     <Compile Include="VulnerabiliteDAO.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
