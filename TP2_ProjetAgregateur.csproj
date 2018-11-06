@@ -59,10 +59,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controlleur.cs" />
+    <Compile Include="Cryptomonnaie.cs" />
+    <Compile Include="CryptomonnaieDAO.cs" />
     <Compile Include="Pokemon.cs" />
+    <Compile Include="VueCrypto.xaml.cs">
+      <DependentUpon>VueCrypto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VuePokeAPI.xaml.cs">
+      <DependentUpon>VuePokeAPI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VueVulnerabilites.xaml.cs">
+      <DependentUpon>VueVulnerabilites.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vulnerabilite.cs" />
     <Compile Include="VulnerabiliteDAO.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="FenetrePrincipale.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -70,10 +82,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="FenetrePrincipale.xaml.cs">
+      <DependentUpon>FenetrePrincipale.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="VueCrypto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VuePokeAPI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VueVulnerabilites.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PokeapiDAO.cs" />

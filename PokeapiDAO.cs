@@ -41,11 +41,15 @@ namespace TP2_ProjetAgregateur
             Console.WriteLine(nombre + " Pokémon reçus");
 
             dynamic[] results = objet["results"];
-
-            Pokemon tempokemon = new Pokemon();
+            Pokemon tempokemon;
+            int count = 1;
             foreach (dynamic proutbanane in results)
             {
+                tempokemon = new Pokemon();
                 tempokemon.nom = proutbanane["name"];
+                
+                tempokemon.numero = count++;
+                if (count == 803) count = 10001;
                 //tempokemon.hauteur = proutbanane["heigth"];
                 listePokemon.Add(tempokemon);
             }
