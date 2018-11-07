@@ -69,14 +69,14 @@
     <Compile Include="VueCrypto.xaml.cs">
       <DependentUpon>VueCrypto.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VuePokeAPI.xaml.cs">
-      <DependentUpon>VuePokeAPI.xaml</DependentUpon>
-    </Compile>
     <Compile Include="VueSeisme.xaml.cs">
       <DependentUpon>VueSeisme.xaml</DependentUpon>
     </Compile>
     <Compile Include="VueSlack.xaml.cs">
       <DependentUpon>VueSlack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VuePokemon.xaml.cs">
+      <DependentUpon>VuePokemon.xaml</DependentUpon>
     </Compile>
     <Compile Include="VueVulnerabilites.xaml.cs">
       <DependentUpon>VueVulnerabilites.xaml</DependentUpon>
@@ -99,10 +99,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="VuePokeAPI.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="VueSeisme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -110,6 +106,10 @@
     <Page Include="VueSlack.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VuePokemon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="VueVulnerabilites.xaml">
       <SubType>Designer</SubType>

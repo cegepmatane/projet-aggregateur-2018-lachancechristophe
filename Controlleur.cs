@@ -10,7 +10,7 @@ namespace TP2_ProjetAgregateur
     {
         private FenetrePrincipale fenetrePrincipale;
         private VueCrypto vueCrypto;
-        private VuePokeAPI vuePokeAPI;
+        private VuePokemon vuePokemon;
         private VueVulnerabilites vueVulnerabilites;
         private VueSeisme vueSeisme;
         private VueSlack vueSlack;
@@ -19,7 +19,7 @@ namespace TP2_ProjetAgregateur
         {
             fenetrePrincipale = fp;
             vueCrypto = new VueCrypto();
-            vuePokeAPI = new VuePokeAPI();
+            vuePokemon = new VuePokemon();
             vueVulnerabilites = new VueVulnerabilites();
             vueSeisme = new VueSeisme();
             vueSlack = new VueSlack();
@@ -32,7 +32,7 @@ namespace TP2_ProjetAgregateur
 
         public void ShowPokeAPI()
         {
-            vuePokeAPI.Show();
+            vuePokemon.Show();
         }
 
         public void ShowVulnerabilites()

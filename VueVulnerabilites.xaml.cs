@@ -64,7 +64,7 @@ namespace TP2_ProjetAgregateur
 
         private void btnSuivant_Click(object sender, RoutedEventArgs e)
         {
-            if (current >= listeVuln.Capacity - 1) return;
+            if (current >= listeVuln.Count - 1) return;
             chargerVulnerabilite(++current);
         }
     }

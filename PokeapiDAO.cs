@@ -79,11 +79,26 @@ namespace TP2_ProjetAgregateur
             JavaScriptSerializer serial = new JavaScriptSerializer();
             dynamic objet = serial.Deserialize<dynamic>(feed);
 
-  
-            Pokemon tempokemon;
-            
-            
+            Pokemon tempokemon = new Pokemon();
 
+            tempPokemon.nom = objet["name"];
+            tempPokemon.numero = objet["id"];
+            tempPokemon.hauteur = objet["height"];
+
+            List<string> abilities = new List<string>();
+            foreach (dynamic duo in objet["moves"])
+                abilities.Add(duo["move"]["name"].Replace('-', ' '));
+            
+            tempPokemon.attaques = abilities;
+
+            tempPokemon.illustration = objet["sprites"]["front_default"];
+
+            //string filename = Path.GetFileName(tempPokemon.illustration);
+
+            //if(!File.Exists("images\\" + filename))
+            //    using (WebClient client = new WebClient())
+            //        client.DownloadFile(new Uri(tempPokemon.illustration), "images\\" + filename);
+                
             return tempPokemon;
         }
     }
