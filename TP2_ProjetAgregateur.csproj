@@ -63,11 +63,20 @@
     <Compile Include="Cryptomonnaie.cs" />
     <Compile Include="CryptomonnaieDAO.cs" />
     <Compile Include="Pokemon.cs" />
+    <Compile Include="Seisme.cs" />
+    <Compile Include="SeismeDAO.cs" />
+    <Compile Include="SlackDAO.cs" />
     <Compile Include="VueCrypto.xaml.cs">
       <DependentUpon>VueCrypto.xaml</DependentUpon>
     </Compile>
     <Compile Include="VuePokeAPI.xaml.cs">
       <DependentUpon>VuePokeAPI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VueSeisme.xaml.cs">
+      <DependentUpon>VueSeisme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VueSlack.xaml.cs">
+      <DependentUpon>VueSlack.xaml</DependentUpon>
     </Compile>
     <Compile Include="VueVulnerabilites.xaml.cs">
       <DependentUpon>VueVulnerabilites.xaml</DependentUpon>
@@ -91,6 +100,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VuePokeAPI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VueSeisme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VueSlack.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

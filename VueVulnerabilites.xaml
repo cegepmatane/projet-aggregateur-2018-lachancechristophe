@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2_ProjetAgregateur"
         mc:Ignorable="d"
-        Title="VueVulnerabilites" Height="287.069" Width="800" Loaded="Window_Loaded">
+        Title="VueVulnerabilites" Height="287.069" Width="577.056" Loaded="Window_Loaded">
     <Grid>
-        <Label x:Name="lblTitre" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="lblTitre" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="550" FontWeight="Bold" FontSize="16"/>
         <Label x:Name="lblLien" Content="Lien: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,196,0,0"/>
         <Label x:Name="lblDate" Content="Date: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,170,0,0"/>
         <Button x:Name="btnFirst" Content="Premier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,227,0,0" Click="btnFirst_Click"/>
-        <Button x:Name="btnLast" Content="Dernier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="707,227,0,0" Click="btnLast_Click"/>
-        <Button x:Name="btnSuivant" Content="Suivant" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="627,227,0,0" Click="btnSuivant_Click"/>
+        <Button x:Name="btnLast" Content="Dernier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="485,227,0,0" Click="btnLast_Click"/>
+        <Button x:Name="btnSuivant" Content="Suivant" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="405,227,0,0" Click="btnSuivant_Click"/>
         <Button x:Name="btnPrecedent" Content="Précédent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="90,227,0,0" Click="btnPrecedent_Click"/>
         <Label x:Name="lblNumero" Content="Numéro: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,224,0,0"/>
-        <TextBlock x:Name="txtDescription" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="13,46,0,0" Height="119" Width="769"/>
+        <TextBlock x:Name="txtDescription" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="13,46,0,0" Height="119" Width="547"/>
 
     </Grid>
 </Window>

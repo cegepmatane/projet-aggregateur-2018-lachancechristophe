@@ -10,6 +10,8 @@
         <Button x:Name="btnPokeapi" Content="PokeAPI" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,10,0,0" Click="btnPokeapi_Click"/>
         <Button x:Name="btnCrypto" Content="Crypto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,35,0,0" Click="btnCrypto_Click"/>
         <Button x:Name="btnVulnerabilite" Content="Vulnérabilités" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,60,0,0" Click="btnVulnerabilite_Click"/>
+        <Button x:Name="btnSlack" Content="Slack" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,110,0,0" Click="btnSlack_Click"/>
+        <Button x:Name="btnSeismes" Content="Seismes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,85,0,0" Click="btnSeismes_Click"/>
 
     </Grid>
 </Window>

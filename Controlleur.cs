@@ -12,13 +12,17 @@ namespace TP2_ProjetAgregateur
         private VueCrypto vueCrypto;
         private VuePokeAPI vuePokeAPI;
         private VueVulnerabilites vueVulnerabilites;
+        private VueSeisme vueSeisme;
+        private VueSlack vueSlack;
 
         public Controlleur(FenetrePrincipale fp)
         {
-            fp = fenetrePrincipale;
+            fenetrePrincipale = fp;
             vueCrypto = new VueCrypto();
             vuePokeAPI = new VuePokeAPI();
             vueVulnerabilites = new VueVulnerabilites();
+            vueSeisme = new VueSeisme();
+            vueSlack = new VueSlack();
         }
 
         public void ShowCrypto()
@@ -34,6 +38,16 @@ namespace TP2_ProjetAgregateur
         public void ShowVulnerabilites()
         {
             vueVulnerabilites.Show();
+        }
+
+        public void ShowSeisme()
+        {
+            vueSeisme.Show();
+        }
+
+        public void ShowSlack()
+        {
+            vueSlack.Show();
         }
     }
 }

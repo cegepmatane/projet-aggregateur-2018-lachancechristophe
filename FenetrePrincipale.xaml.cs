@@ -32,5 +32,15 @@ namespace TP2_ProjetAgregateur
         {
             ctrl.ShowVulnerabilites();
         }
+
+        private void btnSeismes_Click(object sender, RoutedEventArgs e)
+        {
+            ctrl.ShowSeisme();
+        }
+
+        private void btnSlack_Click(object sender, RoutedEventArgs e)
+        {
+            ctrl.ShowSlack();
+        }
     }
 }

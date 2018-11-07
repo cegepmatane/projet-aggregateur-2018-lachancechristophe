@@ -35,7 +35,7 @@ namespace TP2_ProjetAgregateur
 
         private void chargerVulnerabilite(int n)
         {
-            if (n < 0 || n > listeVuln.Capacity) return;
+            if (n < 0 || n >= listeVuln.Count) return;
 
             lblDate.Content = listeVuln[n].date;
             txtDescription.Text = listeVuln[n].description;
@@ -53,7 +53,7 @@ namespace TP2_ProjetAgregateur
 
         private void btnLast_Click(object sender, RoutedEventArgs e)
         {
-            chargerVulnerabilite(listeVuln.Capacity - 1);
+            chargerVulnerabilite(listeVuln.Count - 1);
         }
 
         private void btnPrecedent_Click(object sender, RoutedEventArgs e)

@@ -28,10 +28,11 @@ namespace TP2_ProjetAgregateur
         private void ListboxPokemon_Loaded(object sender, RoutedEventArgs e)
         {
             PokeapiDAO pokeapiDAO = new PokeapiDAO();
-            listePokemon = pokeapiDAO.GetPokemon();
+            Pokemon tp = pokeapiDAO.GetPokemonDetails(1);
 
-            foreach (Pokemon p in listePokemon)
-                ListboxPokemon.Items.Add(p.numero + " - " + p.nom);
+            //foreach (Pokemon p in listePokemon)
+            //    ListboxPokemon.Items.Add(p.numero + " - " + p.nom);
+
             //TOTO Garder juste les 10 premiers pokemon
             // Refaire des requetes pour plus d'info sur ceux la
         }
