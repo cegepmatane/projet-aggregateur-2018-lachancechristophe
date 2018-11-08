@@ -4,6 +4,7 @@ using System;
 using System.Text;
 using System.Xml.XPath;
 using System.Collections.Generic;
+using System.Xml;
 
 namespace TP2_ProjetAgregateur
 {
@@ -15,35 +16,30 @@ namespace TP2_ProjetAgregateur
         {
             List<Seisme> listeSeismes = new List<Seisme>();
 
-            Console.WriteLine("SeismeDAO.listerSeismes(" + lieu + ")");
-            string url = URL_SEISME.Replace("{{LIEU}}", lieu);
-            Console.WriteLine(url);
-            WebRequest requeteSeismes = WebRequest.Create(url);
-            WebResponse reponse = requeteSeismes.GetResponse();
-            StreamReader lecteur = new StreamReader(reponse.GetResponseStream());
-            string xml = lecteur.ReadToEnd();
+            //Console.WriteLine("SeismeDAO.listerSeismes(" + lieu + ")");
+            //string url = URL_SEISME.Replace("{{LIEU}}", lieu);
+            //Console.WriteLine(url);
+            //WebRequest requeteSeismes = WebRequest.Create(url);
+            //WebResponse reponse = requeteSeismes.GetResponse();
+            //StreamReader lecteur = new StreamReader(reponse.GetResponseStream());
+            //string xml = lecteur.ReadToEnd();
 
-            // string -> byte[] -> MemoryStream -> XPathDocument -> XPathNavigator
-            MemoryStream flux = new MemoryStream(Encoding.ASCII.GetBytes(xml));
-            XPathDocument document = new XPathDocument(flux);
-            XPathNavigator navigateurSeismes = document.CreateNavigator();
+            //File.WriteAllText("seisme.xml", xml);
 
-            XPathNodeIterator visiteurSeismes = navigateurSeismes.Select("/response/rows/row");
+            string xml = File.ReadAllText("seisme.xml");
+            XmlDocument documentXML = new XmlDocument();
+            documentXML.LoadXml(xml);
 
-            while (visiteurSeismes.MoveNext())
+            foreach (XmlNode xmlNode in documentXML.DocumentElement.ChildNodes[0].ChildNodes)
             {
-                XPathNavigator navigateurSeisme = visiteurSeismes.Current; // un séisme pointé
-                string source = navigateurSeisme.Select("/source").Current.ToString();
-                string magnitude = navigateurSeisme.Select("/magnitude").Current.ToString();
-                string profondeur = navigateurSeisme.Select("/depth").Current.ToString();
-                string region = navigateurSeisme.Select("/region").Current.ToString();
-                Console.WriteLine("Source " + source);
+                if (xmlNode.Name != "row") continue;
 
                 Seisme seisme = new Seisme();
-                seisme.region = region;
-                seisme.magnitude = magnitude;
-                seisme.source = source;
-                seisme.profondeur = profondeur;
+                seisme.id = xmlNode.ChildNodes[1].InnerText;
+                seisme.magnitude = xmlNode.ChildNodes[2].InnerText;
+                seisme.profondeur = xmlNode.ChildNodes[3].InnerText;
+                seisme.region = xmlNode.ChildNodes[5].InnerText;
+              
                 listeSeismes.Add(seisme);
             }
 

@@ -39,7 +39,7 @@ namespace TP2_ProjetAgregateur
             for (int i = 1; i <= 10; i++)
             {
                 listePokemon.Add(pokeapiDAO.GetPokemonDetails(i));
-                imagePokemon.Add(new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\images\\" + i.ToString() + ".png")));
+                imagePokemon.Add(new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\images\\pokemon\\" + i.ToString() + ".png")));
             }
             chargerPokemon(0);
         }

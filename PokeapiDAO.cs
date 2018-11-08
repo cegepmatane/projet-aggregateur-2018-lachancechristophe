@@ -64,17 +64,17 @@ namespace TP2_ProjetAgregateur
             string completeurl = baseURL + requestURL + n.ToString();
             Console.WriteLine(completeurl);
 
-            HttpWebRequest request = HttpWebRequest.CreateHttp(completeurl);
-            request.Method = "get";
-            request.UserAgent = "mozilla/5.0 doogiepim/1.0.4.2 applewebkit/537.36 (khtml, like gecko) chrome/51.0.2704.84 safari/537.36";
-            WebResponse reponse = request.GetResponse();
-            StreamReader lecteurliste = new StreamReader(reponse.GetResponseStream());
+            //HttpWebRequest request = HttpWebRequest.CreateHttp(completeurl);
+            //request.Method = "get";
+            //request.UserAgent = "mozilla/5.0 doogiepim/1.0.4.2 applewebkit/537.36 (khtml, like gecko) chrome/51.0.2704.84 safari/537.36";
+            //WebResponse reponse = request.GetResponse();
+            //StreamReader lecteurliste = new StreamReader(reponse.GetResponseStream());
 
-            string feed = lecteurliste.ReadToEnd();
+            //string feed = lecteurliste.ReadToEnd();
 
-            //File.WriteAllText("pokeapi.json", feed);
+            //File.WriteAllText(n.ToString() + ".json", feed);
 
-            //string feed = File.ReadAllText("..\\pokeapi.json");
+            string feed = File.ReadAllText(n.ToString() + ".json");
 
             JavaScriptSerializer serial = new JavaScriptSerializer();
             dynamic objet = serial.Deserialize<dynamic>(feed);

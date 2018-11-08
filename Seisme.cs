@@ -8,7 +8,7 @@ namespace TP2_ProjetAgregateur
 {
     class Seisme
     {
-        public string source { get; set; }
+        public string id { get; set; }
         public string magnitude { get; set; }
         public string profondeur { get; set; }
         public string region { get; set; }
