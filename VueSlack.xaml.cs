@@ -30,5 +30,10 @@ namespace TP2_ProjetAgregateur
         {
             ctrl.listerSalons();
         }
+
+        private void btnChargerMessages_Click(object sender, RoutedEventArgs e)
+        {
+            ctrl.chargerMessages(lstSalons.SelectedIndex);
+        }
     }
 }

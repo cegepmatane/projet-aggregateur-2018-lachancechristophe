@@ -10,6 +10,8 @@ namespace TP2_ProjetAgregateur
     {
         SlackDAO DAO;
         VueSlack vue;
+        List<Salon> listeSalons;
+        List<string> listeMessages;
 
         public CtrlSlack()
         {
@@ -24,7 +26,24 @@ namespace TP2_ProjetAgregateur
 
         public void listerSalons()
         {
-            vue.textBlock.Text = DAO.listerSalons();
+            vue.lstSalons.Items.Clear();
+            listeSalons = DAO.listerSalons();
+            foreach ( Salon s in listeSalons)
+            {
+                vue.lstSalons.Items.Add(s.id + " - " + s.nom);
+            }
+        }
+
+        public void chargerMessages(int n)
+        {
+            vue.lstMessages.Items.Clear();
+            listeMessages = DAO.listerMessagesParSalon(listeSalons[n].id);
+            listeMessages.Reverse();
+
+            foreach (string s in listeMessages)
+                vue.lstMessages.Items.Add(s);
+
+            vue.lstMessages.SelectedIndex = vue.lstMessages.Items.Count - 1;
         }
     }
 }
