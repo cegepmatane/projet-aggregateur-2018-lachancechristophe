@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2_ProjetAgregateur"
         mc:Ignorable="d"
-        Title="VueCrypto" Height="450" Width="567.291" Loaded="Window_Loaded">
+        Title="VueCrypto" Height="450" Width="567.291">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="414*"/>
-            <ColumnDefinition Width="145*"/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Label x:Name="lblNomSymbole" Grid.ColumnSpan="3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" Height="47" Width="539"/>
         <Image x:Name="imgIcone" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="280" Margin="0,62,133.579,0" VerticalAlignment="Top" Width="280"/>
         <Label x:Name="lblAlgo" Grid.ColumnSpan="2" Content="Algorithme: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,347,0,0"/>
         <Label x:Name="lblNombre" Grid.ColumnSpan="2" Content="Nombre: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,347,0,0"/>
         <Button x:Name="btnFirst" Content="Premier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="55,389,0,0" Click="btnFirst_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnLast" Content="Dernier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="4.421,389,0,0" Grid.Column="2" Click="btnLast_Click"/>
+        <Button x:Name="btnLast" Content="Dernier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="418,389,0,0" Grid.Column="1" Click="btnLast_Click"/>
         <Button x:Name="btnSuivant" Content="Suivant" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="338,389,0,0" Grid.ColumnSpan="2" Click="btnSuivant_Click"/>
         <Button x:Name="btnPrecedent" Content="Précédent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="135,389,0,0" Click="btnPrecedent_Click" Grid.ColumnSpan="2"/>
     </Grid>

@@ -10,11 +10,11 @@ namespace TP2_ProjetAgregateur
     public partial class FenetrePrincipale : Window
     {
 
-        Controlleur ctrl;
+        ControlleurPrincipal ctrl;
 
         public FenetrePrincipale()
         {
-            ctrl = new Controlleur(this);
+            ctrl = new ControlleurPrincipal(this);
             InitializeComponent();
         }
 

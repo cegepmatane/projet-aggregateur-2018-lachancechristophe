@@ -19,17 +19,16 @@ namespace TP2_ProjetAgregateur
     /// </summary>
     public partial class VueSlack : Window
     {
-        public VueSlack()
+        CtrlSlack ctrl;
+        public VueSlack(CtrlSlack ctrlSlack)
         {
             InitializeComponent();
+            ctrl = ctrlSlack;
         }
 
-        private void textBlock_Loaded(object sender, RoutedEventArgs e)
+        private void btnChargerSalons_Click(object sender, RoutedEventArgs e)
         {
-            string output;
-
-            SlackDAO slackDAO = new SlackDAO();
-            textBlock.Text = slackDAO.listerSalons();
+            ctrl.listerSalons();
         }
     }
 }

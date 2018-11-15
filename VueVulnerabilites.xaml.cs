@@ -19,53 +19,34 @@ namespace TP2_ProjetAgregateur
     /// </summary>
     public partial class VueVulnerabilites : Window
     {
-        List<Vulnerabilite> listeVuln;
-        int current = 0;
-        public VueVulnerabilites()
+        CtrlVulnerabilite ctrl;
+
+        public VueVulnerabilites(CtrlVulnerabilite ctrlVulnerabilite)
         {
             InitializeComponent();
+            ctrl = ctrlVulnerabilite;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            VulnerabiliteDAO vulnDAO = new VulnerabiliteDAO();
-            listeVuln = vulnDAO.GetListeNouvelles();
-            chargerVulnerabilite(0);
-        }
-
-        private void chargerVulnerabilite(int n)
-        {
-            if (n < 0 || n >= listeVuln.Count) return;
-
-            lblDate.Content = listeVuln[n].date;
-            txtDescription.Text = listeVuln[n].description;
-            lblLien.Content = listeVuln[n].lien;
-            lblTitre.Content = listeVuln[n].titre;
-
-            lblNumero.Content = "Numéro: " + n.ToString();
-            current = n;
-        }
+       
 
         private void btnFirst_Click(object sender, RoutedEventArgs e)
         {
-            chargerVulnerabilite(0);
+            ctrl.premiereVulnerabilite();
         }
 
         private void btnLast_Click(object sender, RoutedEventArgs e)
         {
-            chargerVulnerabilite(listeVuln.Count - 1);
+            ctrl.derniereVulnerabilite();
         }
 
         private void btnPrecedent_Click(object sender, RoutedEventArgs e)
         {
-            if (current <= 0) return;
-            chargerVulnerabilite(--current);
+            ctrl.precedenteVulnerabilite();
         }
 
         private void btnSuivant_Click(object sender, RoutedEventArgs e)
         {
-            if (current >= listeVuln.Count - 1) return;
-            chargerVulnerabilite(++current);
+            ctrl.prochaineVulnerabilite();
         }
     }
 }

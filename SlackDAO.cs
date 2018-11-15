@@ -11,9 +11,8 @@ namespace TP2_ProjetAgregateur
         {
             Console.WriteLine("SalonDAO.listerSalons()");
             string json = "";
-
-            string token = "xoxp-473953774023-474779142422-473751241733-5faa9c94333efbece6942434400184c4";
-            string url = "https://slack.com/api/channels.list?token=" + token + "&pretty=1";
+            
+            string url = "https://slack.com/api/channels.list?token=" + SlackSecret.token + "&pretty=1";
             WebRequest requetesSalons = WebRequest.Create(url);
             WebResponse reponse = requetesSalons.GetResponse();
             StreamReader lecteur = new StreamReader(reponse.GetResponseStream());
@@ -36,8 +35,7 @@ namespace TP2_ProjetAgregateur
         {
             Console.WriteLine("SalonDAO.listerMessagesParSalon()");
             string json = "";
-            string token = "token=xoxp-473953774023-473376698226-473681655141-c1f0e28aa268cc2a8f586f80c34330ff";
-            string url = "https://slack.com/api/channels.list? " + token + "&pretty=1";
+            string url = "https://slack.com/api/channels.list? " + SlackSecret.token + "&pretty=1";
             WebRequest requetesMessages = WebRequest.Create(url);
             WebResponse reponse = requetesMessages.GetResponse();
             StreamReader lecteur = new StreamReader(reponse.GetResponseStream());

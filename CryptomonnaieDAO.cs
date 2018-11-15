@@ -10,28 +10,6 @@ namespace TP2_ProjetAgregateur
     class CryptomonnaieDAO
     {
 
-        /*
-		     "GLYPH": {
-      "Id": "4530",
-      "Url": "/coins/glyph/overview",
-      "ImageUrl": "/media/19725/glyph.png",
-      "Name": "GLYPH",
-      "Symbol": "GLYPH",
-      "CoinName": "GlyphCoin",
-      "FullName": "GlyphCoin (GLYPH)",
-      "Algorithm": "X11",
-      "ProofType": "PoW/PoS",
-      "FullyPremined": "0",
-      "TotalCoinSupply": "7000000",
-      "BuiltOn": "N/A",
-      "SmartContractAddress": "N/A",
-      "PreMinedValue": "N/A",
-      "TotalCoinsFreeFloat": "N/A",
-      "SortOrder": "126",
-      "Sponsored": false
-    },
-
-			 */
         public List<Cryptomonnaie> listerMonnaies()
         {
             Console.WriteLine("CryptoMonnaieDAO.listerMonnaies()");
@@ -52,9 +30,7 @@ namespace TP2_ProjetAgregateur
             foreach (dynamic itemMonnaie in lesMonnaies)
             {
                 if (count >= 15) break;
-                //Console.WriteLine(itemMonnaie.ToString());
-                // Donne : [AXIS, System.Collections.Generic.Dictionary`2[System.String, System.Object]]
-                // Même si on a [truc1, truc2] c'est pas un tableau, c'est un cle => valeur, acces avec .Key & .Value
+
                 var monnaie = itemMonnaie.Value;
                 var symbole = monnaie["Symbol"];
                 var nom = monnaie["CoinName"];
@@ -95,7 +71,7 @@ namespace TP2_ProjetAgregateur
                 if (double.TryParse(nombre, out t_nombre))
                     cryptomonnaie.nombre = t_nombre;
                 else
-                { //Condition speciale tres conne pour un edge case.
+                { //Condition speciale pour un edge case dont le string contient un char étrange en position 0.
                     nombre = nombre.Remove(0, 1);
                     cryptomonnaie.nombre = double.Parse(nombre);
                 }

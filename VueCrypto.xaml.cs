@@ -20,62 +20,31 @@ namespace TP2_ProjetAgregateur
     /// </summary>
     public partial class VueCrypto : Window
     {
-        int current = 0;
-        List<Cryptomonnaie> listeCrypto;
-        List<BitmapImage> imageCrypto;
-        public VueCrypto()
+        public CtrlCrypto ctrl;
+        public VueCrypto(CtrlCrypto ctrlCrypto)
         {
             InitializeComponent();
+            ctrl = ctrlCrypto;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        public void btnFirst_Click(object sender, RoutedEventArgs e)
         {
-            CryptomonnaieDAO cryptomonnaieDAO = new CryptomonnaieDAO();
-
-            listeCrypto = cryptomonnaieDAO.listerMonnaies();
-            imageCrypto = new List<BitmapImage>();
-
-            for (int i = 0; i < 15; i++)
-            {
-
-                imageCrypto.Add(new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\images\\crypto\\" + listeCrypto[i].illustration)));
-            }
-            chargerMonnaie(0);
+            ctrl.premierCrypto();
         }
 
-        private void chargerMonnaie(int n)
+        public void btnLast_Click(object sender, RoutedEventArgs e)
         {
-            if (n < 0 || n > 15) return;
-
-            lblNomSymbole.Content = listeCrypto[n].symbole + " - " + listeCrypto[n].nom;
-            lblAlgo.Content = "Algorithme: " + listeCrypto[n].algorithme;
-            lblNombre.Content = "Nombre: " + listeCrypto[n].nombre.ToString();
-
-            imgIcone.Source = imageCrypto[n];
-            
-            current = n;
+            ctrl.dernierCrypto();
         }
 
-        private void btnFirst_Click(object sender, RoutedEventArgs e)
+        public void btnSuivant_Click(object sender, RoutedEventArgs e)
         {
-            chargerMonnaie(0);
+            ctrl.prochainCrypto();
         }
 
-        private void btnPrecedent_Click(object sender, RoutedEventArgs e)
+        public void btnPrecedent_Click(object sender, RoutedEventArgs e)
         {
-            if (current <= 0) return;
-            chargerMonnaie(--current);
-        }
-
-        private void btnSuivant_Click(object sender, RoutedEventArgs e)
-        {
-            if (current >= listeCrypto.Count - 1) return;
-            chargerMonnaie(++current);
-        }
-
-        private void btnLast_Click(object sender, RoutedEventArgs e)
-        {
-            chargerMonnaie(listeCrypto.Count - 1);
+            ctrl.precedentCrypto();
         }
     }
 }

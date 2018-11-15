@@ -19,18 +19,17 @@ namespace TP2_ProjetAgregateur
     /// </summary>
     public partial class VueSeisme : Window
     {
-        public VueSeisme()
+        CtrlSeisme ctrl;
+
+        public VueSeisme(CtrlSeisme ctrlSeisme)
         {
             InitializeComponent();
+            ctrl = ctrlSeisme;
         }
 
-        private void dataGrid_Loaded(object sender, RoutedEventArgs e)
+        private void btnCharger_Click(object sender, RoutedEventArgs e)
         {
-            SeismeDAO seismeDAO = new SeismeDAO();
-
-            List<Seisme> listeSeismes = seismeDAO.listerSeismes("Stella");
-
-            dataGrid.ItemsSource = listeSeismes;
+            ctrl.ChargerSeisme(txtLieu.Text);
         }
     }
 }

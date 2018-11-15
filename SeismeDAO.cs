@@ -10,23 +10,27 @@ namespace TP2_ProjetAgregateur
 {
     class SeismeDAO
     {
-        public static string URL_SEISME = "http://soda.demo.socrata.com/resource/6yvf-kk3n.xml?source=pr&$where=region%20like%20%27%25{{LIEU}}%25%27";
+        public static string URL_SEISME = "http://soda.demo.socrata.com/resource/6yvf-kk3n.xml?source=pr&$where=region%20like%20%27%25";
+        public static string URL_FIN = "%25%27";
 
         public List<Seisme> listerSeismes(string lieu)
         {
             List<Seisme> listeSeismes = new List<Seisme>();
 
-            //Console.WriteLine("SeismeDAO.listerSeismes(" + lieu + ")");
-            //string url = URL_SEISME.Replace("{{LIEU}}", lieu);
-            //Console.WriteLine(url);
-            //WebRequest requeteSeismes = WebRequest.Create(url);
-            //WebResponse reponse = requeteSeismes.GetResponse();
-            //StreamReader lecteur = new StreamReader(reponse.GetResponseStream());
-            //string xml = lecteur.ReadToEnd();
+            if (!File.Exists(lieu + ".xml"))
+            {
+                Console.WriteLine("SeismeDAO.listerSeismes(" + lieu + ")");
+                string url = URL_SEISME + lieu + URL_FIN;
+                Console.WriteLine(url);
+                WebRequest requeteSeismes = WebRequest.Create(url);
+                WebResponse reponse = requeteSeismes.GetResponse();
+                StreamReader lecteur = new StreamReader(reponse.GetResponseStream());
+                string feed = lecteur.ReadToEnd();
 
-            //File.WriteAllText("seisme.xml", xml);
+                File.WriteAllText(lieu + ".xml", feed);
+            }
 
-            string xml = File.ReadAllText("seisme.xml");
+            string xml = File.ReadAllText(lieu + ".xml");
             XmlDocument documentXML = new XmlDocument();
             documentXML.LoadXml(xml);
 

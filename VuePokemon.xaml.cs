@@ -20,65 +20,33 @@ namespace TP2_ProjetAgregateur
     /// </summary>
     public partial class VuePokemon : Window
     {
-        int current = 0;
-        List<Pokemon> listePokemon;
-        List<BitmapImage> imagePokemon;
+        CtrlPokemon ctrl;
 
-        public VuePokemon()
+        public VuePokemon(CtrlPokemon ctrlPokemon)
         {
             InitializeComponent();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            PokeapiDAO pokeapiDAO = new PokeapiDAO();
-
-            listePokemon = new List<Pokemon>();
-            imagePokemon = new List<BitmapImage>();
-
-            for (int i = 1; i <= 10; i++)
-            {
-                listePokemon.Add(pokeapiDAO.GetPokemonDetails(i));
-                imagePokemon.Add(new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\images\\pokemon\\" + i.ToString() + ".png")));
-            }
-            chargerPokemon(0);
-        }
-
-        private void chargerPokemon(int n)
-        {
-            if (n < 0 || n > 10) return;
-
-            lblNom.Content = listePokemon[n].nom;
-            lblHauteur.Content = "Hauteur: " + listePokemon[n].hauteur;
-            lblNumero.Content = "Numéro: " + listePokemon[n].numero;
-            
-            imgFace.Source = imagePokemon[n];
-            lstAttaques.Items.Clear();
-            foreach (string a in listePokemon[n].attaques)
-                lstAttaques.Items.Add(a);
-            current = n;
+            ctrl = ctrlPokemon;
         }
 
         private void btnFirst_Click(object sender, RoutedEventArgs e)
         {
-            chargerPokemon(0);
+            ctrl.premierPkmn();
         }
 
         private void btnPrecedent_Click(object sender, RoutedEventArgs e)
         {
-            if (current <= 0) return;
-            chargerPokemon(--current);
+            ctrl.precedentPkmn();
         }
 
         private void btnSuivant_Click(object sender, RoutedEventArgs e)
         {
-            if (current >= listePokemon.Count - 1) return;
-            chargerPokemon(++current);
+            ctrl.prochainPkmn();
         }
 
         private void btnLast_Click(object sender, RoutedEventArgs e)
         {
-            chargerPokemon(listePokemon.Count - 1);
+            ctrl.dernierPkmn();
         }
+
     }
 }

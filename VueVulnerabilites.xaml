@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2_ProjetAgregateur"
         mc:Ignorable="d"
-        Title="VueVulnerabilites" Height="287.069" Width="577.056" Loaded="Window_Loaded">
+        Title="VueVulnerabilites" Height="287" Width="577">
     <Grid>
         <Label x:Name="lblTitre" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="550" FontWeight="Bold" FontSize="16"/>
         <Label x:Name="lblLien" Content="Lien: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,196,0,0"/>

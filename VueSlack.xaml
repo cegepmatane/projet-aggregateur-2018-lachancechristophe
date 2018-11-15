@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2_ProjetAgregateur"
         mc:Ignorable="d"
-        Title="VueSlack" Height="450" Width="800">
+        Title="VueSlack" Height="450" Width="406.622">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="10,10,0,0" Height="399" Width="772" Loaded="textBlock_Loaded"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="10,10,0,0" Height="399" Width="301"/>
+        <Button x:Name="btnChargerSalons" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="316,10,0,0" Click="btnChargerSalons_Click"/>
     </Grid>
 </Window>

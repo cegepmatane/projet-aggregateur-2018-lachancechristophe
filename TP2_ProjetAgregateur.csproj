@@ -59,13 +59,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controlleur.cs" />
+    <Compile Include="ControlleurPrincipal.cs" />
     <Compile Include="Cryptomonnaie.cs" />
     <Compile Include="CryptomonnaieDAO.cs" />
+    <Compile Include="CtrlCrypto.cs" />
+    <Compile Include="CtrlPokemon.cs" />
+    <Compile Include="CtrlSeisme.cs" />
+    <Compile Include="CtrlSlack.cs" />
+    <Compile Include="CtrlVulnerabilite.cs" />
     <Compile Include="Pokemon.cs" />
     <Compile Include="Seisme.cs" />
     <Compile Include="SeismeDAO.cs" />
     <Compile Include="SlackDAO.cs" />
+    <Compile Include="SlackSecret.cs" />
     <Compile Include="VueCrypto.xaml.cs">
       <DependentUpon>VueCrypto.xaml</DependentUpon>
     </Compile>
