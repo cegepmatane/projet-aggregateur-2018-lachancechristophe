@@ -13,12 +13,14 @@ namespace TP2_ProjetAgregateur
         public List<Cryptomonnaie> listerMonnaies()
         {
             Console.WriteLine("CryptoMonnaieDAO.listerMonnaies()");
-            //string url = "https://min-api.cryptocompare.com/data/all/coinlist";
-            //HttpWebRequest requeteListeMonnaies = (HttpWebRequest)WebRequest.Create(url);
-            //WebResponse reponse = requeteListeMonnaies.GetResponse();
-            //StreamReader lecteurListeMonnaies = new StreamReader(reponse.GetResponseStream());
-            //string json = lecteurListeMonnaies.ReadToEnd();
-            //Console.WriteLine(json);
+            if (!File.Exists("../crypto.json"))
+            {
+                string url = "https://min-api.cryptocompare.com/data/all/coinlist";
+                HttpWebRequest requeteListeMonnaies = (HttpWebRequest)WebRequest.Create(url);
+                WebResponse reponse = requeteListeMonnaies.GetResponse();
+                StreamReader lecteurListeMonnaies = new StreamReader(reponse.GetResponseStream());
+                File.WriteAllText("../crypto.json",lecteurListeMonnaies.ReadToEnd());
+            }
 
             string json = File.ReadAllText("../crypto.json");
 

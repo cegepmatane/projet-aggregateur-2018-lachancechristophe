@@ -20,19 +20,19 @@ namespace TP2_ProjetAgregateur
 
             List<Pokemon> listePokemon = new List<Pokemon>();
 
-            //string completeurl = baseurl + requesturl;
-            //console.writeline(completeurl);
+            if (!File.Exists("..\\pokeapi.json"))
+            {
+                string completeURL = baseURL + requestURL;
+                Console.WriteLine(completeURL);
 
-            //httpwebrequest request = httpwebrequest.createhttp(completeurl);
-            //request.method = "get";
-            //request.useragent = "mozilla/5.0 doogiepim/1.0.4.2 applewebkit/537.36 (khtml, like gecko) chrome/51.0.2704.84 safari/537.36";
-            //webresponse reponse = request.getresponse();
-            //streamreader lecteurliste = new streamreader(reponse.getresponsestream());
+                HttpWebRequest request = HttpWebRequest.CreateHttp(completeURL);
+                request.Method = "get";
+                request.UserAgent = "mozilla/5.0 doogiepim/1.0.4.2 applewebkit/537.36 (khtml, like gecko) chrome/51.0.2704.84 safari/537.36";
+                WebResponse reponse = request.GetResponse();
+                StreamReader lecteurliste = new StreamReader(reponse.GetResponseStream());
 
-            //string feed = lecteurListe.ReadToEnd();
-
-            // File.WriteAllText("pokeapi.json", feed);
-
+                File.WriteAllText("pokeapi.json", lecteurliste.ReadToEnd());
+            }
             string feed = File.ReadAllText("..\\pokeapi.json");
 
             JavaScriptSerializer serial = new JavaScriptSerializer();
@@ -43,14 +43,13 @@ namespace TP2_ProjetAgregateur
             dynamic[] results = objet["results"];
             Pokemon tempokemon;
             int count = 1;
-            foreach (dynamic proutbanane in results)
+            foreach (dynamic tempObject in results)
             {
                 tempokemon = new Pokemon();
-                tempokemon.nom = proutbanane["name"];
+                tempokemon.nom = tempObject["name"];
                 
                 tempokemon.numero = count++;
                 if (count == 803) count = 10001;
-                //tempokemon.hauteur = proutbanane["heigth"];
                 listePokemon.Add(tempokemon);
             }
             return listePokemon;
@@ -64,16 +63,16 @@ namespace TP2_ProjetAgregateur
             string completeurl = baseURL + requestURL + n.ToString();
             Console.WriteLine(completeurl);
 
-            //HttpWebRequest request = HttpWebRequest.CreateHttp(completeurl);
-            //request.Method = "get";
-            //request.UserAgent = "mozilla/5.0 doogiepim/1.0.4.2 applewebkit/537.36 (khtml, like gecko) chrome/51.0.2704.84 safari/537.36";
-            //WebResponse reponse = request.GetResponse();
-            //StreamReader lecteurliste = new StreamReader(reponse.GetResponseStream());
-
-            //string feed = lecteurliste.ReadToEnd();
-
-            //File.WriteAllText(n.ToString() + ".json", feed);
-
+            if (!File.Exists(n.ToString() + ".json"))
+            {
+                HttpWebRequest request = HttpWebRequest.CreateHttp(completeurl);
+                request.Method = "get";
+                request.UserAgent = "mozilla/5.0 doogiepim/1.0.4.2 applewebkit/537.36 (khtml, like gecko) chrome/51.0.2704.84 safari/537.36";
+                WebResponse reponse = request.GetResponse();
+                StreamReader lecteurliste = new StreamReader(reponse.GetResponseStream());
+                
+                File.WriteAllText(n.ToString() + ".json", lecteurliste.ReadToEnd());
+            }
             string feed = File.ReadAllText(n.ToString() + ".json");
 
             JavaScriptSerializer serial = new JavaScriptSerializer();
@@ -93,12 +92,12 @@ namespace TP2_ProjetAgregateur
 
             tempPokemon.illustration = objet["sprites"]["front_default"];
 
-            //string filename = Path.GetFileName(tempPokemon.illustration);
+            string filename = Path.GetFileName(tempPokemon.illustration);
 
-            //if(!File.Exists("images\\" + filename))
-            //    using (WebClient client = new WebClient())
-            //        client.DownloadFile(new Uri(tempPokemon.illustration), "images\\" + filename);
-                
+            if (!File.Exists("images\\" + filename))
+                using (WebClient client = new WebClient())
+                    client.DownloadFile(new Uri(tempPokemon.illustration), "images\\" + filename);
+
             return tempPokemon;
         }
     }

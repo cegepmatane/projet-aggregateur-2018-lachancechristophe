@@ -16,16 +16,19 @@ namespace TP2_ProjetAgregateur
         {
             Console.WriteLine("VulnerabiliteDAO.GetListeNouvelles()");
 
-            //string completeURL = baseURL + requestURL;
-            //Console.WriteLine(completeURL);
+            if (!File.Exists("nvd-rss-analyzed.xml"))
+            {
+                string completeURL = baseURL + requestURL;
+                Console.WriteLine(completeURL);
 
-            //HttpWebRequest request = HttpWebRequest.CreateHttp(completeURL);
-            //request.Method = "get";
-            //request.UserAgent = "mozilla/5.0 doogiepim/1.0.4.2 applewebkit/537.36 (khtml, like gecko) chrome/51.0.2704.84 safari/537.36";
-            //WebResponse reponse = request.GetResponse();
+                HttpWebRequest request = HttpWebRequest.CreateHttp(completeURL);
+                request.Method = "get";
+                request.UserAgent = "mozilla/5.0 doogiepim/1.0.4.2 applewebkit/537.36 (khtml, like gecko) chrome/51.0.2704.84 safari/537.36";
+                WebResponse reponse = request.GetResponse();
 
-            //StreamReader lecteurliste = new StreamReader(reponse.GetResponseStream());
-            //string feed = lecteurliste.ReadToEnd();
+                StreamReader lecteurliste = new StreamReader(reponse.GetResponseStream());
+                File.WriteAllText("nvd-rss-analyzed.xml", lecteurliste.ReadToEnd());
+            }
 
             string feed = File.ReadAllText("nvd-rss-analyzed.xml");
 
