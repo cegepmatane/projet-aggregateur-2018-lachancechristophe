@@ -10,7 +10,7 @@
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="336" Margin="10,42,0,0" VerticalAlignment="Top" Width="388"/>
         <Label x:Name="lblLieu" Content="Lieu:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
         <TextBox x:Name="txtLieu" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Hatillo" VerticalAlignment="Top" Width="120" Margin="49,14,0,0"/>
-        <Button x:Name="btnCharger" Content="Charger" HorizontalAlignment="Left" VerticalAlignment="Top" Width="388" Margin="10,383,0,0" Click="btnCharger_Click"/>
+        <Button x:Name="btnCharger" Content="Charger" HorizontalAlignment="Left" VerticalAlignment="Top" Width="388" Margin="10,383,0,0" Click="actionCharger"/>
 
     </Grid>
 </Window>

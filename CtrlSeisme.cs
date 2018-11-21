@@ -23,7 +23,7 @@ namespace TP2_ProjetAgregateur
             vue.Show();
         }
 
-        public void ChargerSeisme(string lieu)
+        public void chargerSeisme(string lieu)
         {
             if (vue.txtLieu.Text != "")
             {

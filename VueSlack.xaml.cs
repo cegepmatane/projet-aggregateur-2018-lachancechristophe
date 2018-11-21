@@ -26,14 +26,17 @@ namespace TP2_ProjetAgregateur
             ctrl = ctrlSlack;
         }
 
-        private void btnChargerSalons_Click(object sender, RoutedEventArgs e)
+        private void actionChargerSalons(object sender, RoutedEventArgs e)
         {
             ctrl.listerSalons();
+            selectionnerPremierSalon();
         }
 
-        private void btnChargerMessages_Click(object sender, RoutedEventArgs e)
+        private void actionChargerMessages(object sender, RoutedEventArgs e)
         {
             ctrl.chargerMessages(lstSalons.SelectedIndex);
         }
+
+        private void selectionnerPremierSalon() { lstSalons.SelectedIndex = 0; }
     }
 }

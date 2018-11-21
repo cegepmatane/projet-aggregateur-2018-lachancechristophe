@@ -11,10 +11,10 @@
             <ColumnDefinition Width="321*"/>
             <ColumnDefinition Width="136*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnFirst" Content="Premier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,227,0,0" Click="btnFirst_Click"/>
-        <Button x:Name="btnLast" Content="Dernier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="51.904,227,0,0" Grid.Column="1" Click="btnLast_Click"/>
-        <Button x:Name="btnSuivant" Content="Suivant" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="293,227,0,0" Grid.ColumnSpan="2" Click="btnSuivant_Click"/>
-        <Button x:Name="btnPrecedent" Content="Précédent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="90,227,0,0" Click="btnPrecedent_Click"/>
+        <Button x:Name="btnFirst" Content="Premier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,227,0,0" Click="actionPremier"/>
+        <Button x:Name="btnLast" Content="Dernier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="51.904,227,0,0" Grid.Column="1" Click="actionLast"/>
+        <Button x:Name="btnSuivant" Content="Suivant" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="293,227,0,0" Grid.ColumnSpan="2" Click="actionSuivant"/>
+        <Button x:Name="btnPrecedent" Content="Précédent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="90,227,0,0" Click="actionPrecedent"/>
         <Label x:Name="lblNumero" Content="Numéro: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,224,0,0"/>
         <Label x:Name="lblNom" Content="Nom: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Image x:Name="imgFace" HorizontalAlignment="Left" Height="154" Margin="10,49,0,0" VerticalAlignment="Top" Width="154"/>

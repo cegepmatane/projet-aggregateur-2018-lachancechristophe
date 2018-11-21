@@ -94,9 +94,9 @@ namespace TP2_ProjetAgregateur
 
             string filename = Path.GetFileName(tempPokemon.illustration);
 
-            if (!File.Exists("images\\" + filename))
+            if (!File.Exists("images\\pokemon\\" + filename))
                 using (WebClient client = new WebClient())
-                    client.DownloadFile(new Uri(tempPokemon.illustration), "images\\" + filename);
+                    client.DownloadFile(new Uri(tempPokemon.illustration), "images\\pokemon\\" + filename);
 
             return tempPokemon;
         }

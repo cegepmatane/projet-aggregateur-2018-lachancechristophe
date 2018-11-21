@@ -29,22 +29,22 @@ namespace TP2_ProjetAgregateur
 
        
 
-        private void btnFirst_Click(object sender, RoutedEventArgs e)
+        private void actionPremier(object sender, RoutedEventArgs e)
         {
             ctrl.premiereVulnerabilite();
         }
 
-        private void btnLast_Click(object sender, RoutedEventArgs e)
+        private void actionDernier(object sender, RoutedEventArgs e)
         {
             ctrl.derniereVulnerabilite();
         }
 
-        private void btnPrecedent_Click(object sender, RoutedEventArgs e)
+        private void actionPrecedent(object sender, RoutedEventArgs e)
         {
             ctrl.precedenteVulnerabilite();
         }
 
-        private void btnSuivant_Click(object sender, RoutedEventArgs e)
+        private void actionSuivant(object sender, RoutedEventArgs e)
         {
             ctrl.prochaineVulnerabilite();
         }

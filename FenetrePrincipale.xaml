@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:TP2_ProjetAgregateur"
         mc:Ignorable="d"
         Title="Aggregateur" Height="94.138" Width="275.517">
-    <Grid>
-        <Button x:Name="btnPokeapi" Content="PokeAPI" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,10,0,0" Click="btnPokeapi_Click"/>
-        <Button x:Name="btnCrypto" Content="Crypto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="90,10,0,0" Click="btnCrypto_Click"/>
-        <Button x:Name="btnVulnerabilite" Content="Vulnérabilités" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,10,0,0" Click="btnVulnerabilite_Click"/>
-        <Button x:Name="btnSlack" Content="Slack" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="127,34,0,0" Click="btnSlack_Click"/>
-        <Button x:Name="btnSeismes" Content="Seismes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="47,34,0,0" Click="btnSeismes_Click"/>
+    <Grid Margin="0,0,2,-4">
+        <Button x:Name="btnPokeapi" Content="PokeAPI" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,10,0,0" Click="actionPokeapi_Ouvrir"/>
+        <Button x:Name="btnCrypto" Content="Crypto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="90,10,0,0" Click="actionCrypto_Ouvrir"/>
+        <Button x:Name="btnVulnerabilite" Content="Vulnérabilités" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,10,0,0" Click="actionVulnerabilite_Ouvrir"/>
+        <Button x:Name="btnSlack" Content="Slack" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="127,34,0,0" Click="actionSlack_Ouvrir"/>
+        <Button x:Name="btnSeismes" Content="Seismes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="47,34,0,0" Click="actionSeisme_Ouvrir"/>
 
     </Grid>
 </Window>

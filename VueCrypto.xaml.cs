@@ -27,22 +27,22 @@ namespace TP2_ProjetAgregateur
             ctrl = ctrlCrypto;
         }
 
-        public void btnFirst_Click(object sender, RoutedEventArgs e)
+        public void actionPremier(object sender, RoutedEventArgs e)
         {
             ctrl.premierCrypto();
         }
 
-        public void btnLast_Click(object sender, RoutedEventArgs e)
+        public void actionDernier(object sender, RoutedEventArgs e)
         {
             ctrl.dernierCrypto();
         }
 
-        public void btnSuivant_Click(object sender, RoutedEventArgs e)
+        public void actionSuivant(object sender, RoutedEventArgs e)
         {
             ctrl.prochainCrypto();
         }
 
-        public void btnPrecedent_Click(object sender, RoutedEventArgs e)
+        public void actionPrecedent(object sender, RoutedEventArgs e)
         {
             ctrl.precedentCrypto();
         }

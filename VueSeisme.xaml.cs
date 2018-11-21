@@ -27,9 +27,9 @@ namespace TP2_ProjetAgregateur
             ctrl = ctrlSeisme;
         }
 
-        private void btnCharger_Click(object sender, RoutedEventArgs e)
+        private void actionCharger(object sender, RoutedEventArgs e)
         {
-            ctrl.ChargerSeisme(txtLieu.Text);
+            ctrl.chargerSeisme(txtLieu.Text);
         }
     }
 }

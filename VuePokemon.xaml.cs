@@ -28,22 +28,22 @@ namespace TP2_ProjetAgregateur
             ctrl = ctrlPokemon;
         }
 
-        private void btnFirst_Click(object sender, RoutedEventArgs e)
+        private void actionPremier(object sender, RoutedEventArgs e)
         {
             ctrl.premierPkmn();
         }
 
-        private void btnPrecedent_Click(object sender, RoutedEventArgs e)
+        private void actionPrecedent(object sender, RoutedEventArgs e)
         {
             ctrl.precedentPkmn();
         }
 
-        private void btnSuivant_Click(object sender, RoutedEventArgs e)
+        private void actionSuivant(object sender, RoutedEventArgs e)
         {
             ctrl.prochainPkmn();
         }
 
-        private void btnLast_Click(object sender, RoutedEventArgs e)
+        private void actionLast(object sender, RoutedEventArgs e)
         {
             ctrl.dernierPkmn();
         }

@@ -1,4 +1,5 @@
 ﻿
+using System.IO;
 using System.Windows;
 
 
@@ -14,31 +15,35 @@ namespace TP2_ProjetAgregateur
 
         public FenetrePrincipale()
         {
+            if (!Directory.Exists("images")) Directory.CreateDirectory("images");
+            if (!Directory.Exists("images\\pokemon")) Directory.CreateDirectory("images\\pokemon");
+            if (!Directory.Exists("images\\crypto")) Directory.CreateDirectory("images\\crypto");
             ctrl = new ControlleurPrincipal(this);
             InitializeComponent();
         }
 
-        private void btnPokeapi_Click(object sender, RoutedEventArgs e)
+        private void actionPokeapi_Ouvrir(object sender, RoutedEventArgs e)
         {
             ctrl.ShowPokeAPI();
+            
         }
 
-        private void btnCrypto_Click(object sender, RoutedEventArgs e)
+        private void actionCrypto_Ouvrir(object sender, RoutedEventArgs e)
         {
             ctrl.ShowCrypto();
         }
 
-        private void btnVulnerabilite_Click(object sender, RoutedEventArgs e)
+        private void actionVulnerabilite_Ouvrir(object sender, RoutedEventArgs e)
         {
             ctrl.ShowVulnerabilites();
         }
 
-        private void btnSeismes_Click(object sender, RoutedEventArgs e)
+        private void actionSeisme_Ouvrir(object sender, RoutedEventArgs e)
         {
             ctrl.ShowSeisme();
         }
 
-        private void btnSlack_Click(object sender, RoutedEventArgs e)
+        private void actionSlack_Ouvrir(object sender, RoutedEventArgs e)
         {
             ctrl.ShowSlack();
         }

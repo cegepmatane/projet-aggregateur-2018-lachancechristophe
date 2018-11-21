@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="VueSlack" Height="450" Width="357.022">
     <Grid>
-        <Button x:Name="btnChargerSalons" Content="Charger Salons" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Margin="237,36,0,0" Click="btnChargerSalons_Click"/>
+        <Button x:Name="btnChargerSalons" Content="Charger Salons" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Margin="237,36,0,0" Click="actionChargerSalons"/>
         <Label x:Name="lblSalons" Content="Salons :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
         <ListBox x:Name="lstSalons" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="222" Margin="10,36,0,0"/>
-        <Button x:Name="btnChargerMessages" Content="Charger Messages" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Margin="237,117,0,0" Click="btnChargerMessages_Click"/>
+        <Button x:Name="btnChargerMessages" Content="Charger Messages" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Margin="237,117,0,0" Click="actionChargerMessages"/>
         <Label x:Name="lblMessages" Content="Messages :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,141,0,0"/>
         <ListBox x:Name="lstMessages" HorizontalAlignment="Left" Height="243" VerticalAlignment="Top" Width="331" Margin="10,167,0,0"/>
     </Grid>
